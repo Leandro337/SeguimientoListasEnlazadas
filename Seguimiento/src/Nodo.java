@@ -4,7 +4,7 @@ public class Nodo<T> {
 
     public Nodo(T dato) {
         this.dato = dato;
-        proximo = null; //Null inicialmente ya que no referencia a nada antes de estar en la lista
+        this.proximo = null;
     }
 
     public T getDato() {
@@ -15,11 +15,11 @@ public class Nodo<T> {
         this.dato = dato;
     }
 
-    public Nodo getProximo() {
+    public Nodo<T> getProximo() {
         return proximo;
     }
 
-    public void setProximo(Nodo proximo) {
+    public void setProximo(Nodo<T> proximo) {
         this.proximo = proximo;
     }
 
