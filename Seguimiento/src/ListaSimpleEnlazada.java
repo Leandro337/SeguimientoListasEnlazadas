@@ -13,6 +13,7 @@ public class ListaSimpleEnlazada<T extends Comparable<T>> implements Iterable<T>
     public void agregarPrimero(T dato) {
         Nodo<T> newNodo = new Nodo<>(dato);
 
+
         if (primero == null) {
             primero = newNodo;
         } else {
