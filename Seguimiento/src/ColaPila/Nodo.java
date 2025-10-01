@@ -1,19 +1,19 @@
 package ColaPila;
 
 public class Nodo<T> {
-    private Nodo<T> dato;
+    private T dato;
     private Nodo<T> proximo; //Referencia al siguiente elemento
 
-    public Nodo(Nodo<T> dato, Nodo<T> proximo) {
+    public Nodo(T dato) {
         this.dato = dato;
-        this.proximo = proximo;
+        proximo = null; //Null inicialmente ya que no referencia a nada antes de estar en la lista
     }
 
-    public Nodo<T> getDato() {
+    public T getDato() {
         return dato;
     }
 
-    public void setDato(Nodo<T> dato) {
+    public void setDato(T dato) {
         this.dato = dato;
     }
 
@@ -25,5 +25,12 @@ public class Nodo<T> {
         this.proximo = proximo;
     }
 
-
+    @Override
+    public String toString() {
+        return "Nodo{" +
+                "dato=" + dato +
+                ", proximo=" + proximo +
+                '}';
+    }
 }
+

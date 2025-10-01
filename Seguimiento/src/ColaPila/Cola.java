@@ -11,22 +11,6 @@ public class Cola<T> {
         this.tamano = tamano;
     }
 
-    public Nodo<T> desencolar() {
-        if (frente == null) {
-            return null;
-        }
-
-        Nodo<T> dato = frente.getDato();
-        frente = frente.getProximo();
-
-        if (frente == null) {
-            fin = null;
-        }
-
-        tamano--;
-        return dato;
-    }
-
     public Nodo<T> getFin() {
         return fin;
     }
@@ -49,6 +33,31 @@ public class Cola<T> {
 
     public void setTamano(int tamano) {
         this.tamano = tamano;
+    }
+
+    public Nodo<T> desencolar() {
+        if (frente == null) {
+            return null;
+        }
+
+        Nodo<T> aux = frente;
+        frente = frente.getProximo();
+        tamano--;
+        return aux;
+    }
+
+    public void encolar(T dato){
+        Nodo<T> newNodo = new Nodo<>(dato);
+        if(frente == null){
+            frente = newNodo;
+            fin = newNodo;
+            tamano++;
+        }
+
+        fin.setProximo(newNodo);
+        fin = newNodo;
+        tamano++;
+
     }
 
     @Override
