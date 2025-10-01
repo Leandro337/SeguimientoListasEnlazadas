@@ -1,29 +1,29 @@
 package ColaPila;
 
 public class Cola <T> {
-    T frente;
-    T fin;
-    int tamano;
+    private Nodo<T> frente;
+    private Nodo<T> fin;
+    private int tamano;
 
-    public Cola(T fin, T frente, int tamano) {
+    public Cola(Nodo<T> fin, Nodo<T> frente, int tamano) {
         this.fin = fin;
         this.frente = frente;
         this.tamano = tamano;
     }
 
-    public T getFin() {
+    public Nodo<T> getFin() {
         return fin;
     }
 
-    public void setFin(T fin) {
+    public void setFin(Nodo<T> fin) {
         this.fin = fin;
     }
 
-    public T getFrente() {
+    public Nodo<T> getFrente() {
         return frente;
     }
 
-    public void setFrente(T frente) {
+    public void setFrente(Nodo<T> frente) {
         this.frente = frente;
     }
 
