@@ -1,6 +1,6 @@
 package ColaPila;
 
-public class Cola <T> {
+public class Cola<T> {
     private Nodo<T> frente;
     private Nodo<T> fin;
     private int tamano;
@@ -9,6 +9,22 @@ public class Cola <T> {
         this.fin = fin;
         this.frente = frente;
         this.tamano = tamano;
+    }
+
+    public Nodo<T> desencolar() {
+        if (frente == null) {
+            return null;
+        }
+
+        Nodo<T> dato = frente.getDato();
+        frente = frente.getProximo();
+
+        if (frente == null) {
+            fin = null;
+        }
+
+        tamano--;
+        return dato;
     }
 
     public Nodo<T> getFin() {
